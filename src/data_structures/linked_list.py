@@ -2,14 +2,14 @@ from typing import Any
 
 
 class Node:
-    def __init__(self, value : Any) -> None:
-        self.value : Any | None = value
-        self.next : Any | None = None
+    def __init__(self, value: Any) -> None:
+        self.value: Any | None = value
+        self.next: Any | None = None
     
 
 class LinkedList:
     def __init__(self) -> None:
-        self.head : Node | None = None
+        self.head: Node | None = None
 
     # O(n) - linear time
     def __repr__(self) -> str:
@@ -25,7 +25,7 @@ class LinkedList:
         return return_string
 
     # O(n) - linear time
-    def __contains__(self, value : Any) -> bool:
+    def __contains__(self, value: Any) -> bool:
         last = self.head
         while last is not None:
             if last.value == value:
@@ -43,7 +43,7 @@ class LinkedList:
         return counter
 
     # O(n) - linear time
-    def append(self, value : Any) -> None:
+    def append(self, value: Any) -> None:
         if self.head is None:
             self.head = Node(value)
         else:
@@ -59,7 +59,7 @@ class LinkedList:
         self.head = first_node
 
     # O(n) - linear time
-    def insert(self, value : Any, index : int) -> None | ValueError:
+    def insert(self, value: Any, index: int) -> None | ValueError:
         if index == 0:
             self.prepend(value)
         else:
@@ -76,7 +76,7 @@ class LinkedList:
                 last.next = new_node
 
     # O(n) - linear time
-    def delete(self, value : Any) -> None:
+    def delete(self, value: Any) -> None:
         last = self.head
         if last is not None:
             if last.value == value:
@@ -89,7 +89,7 @@ class LinkedList:
                     last = last.next
 
     # O(n) - linear time
-    def pop(self, index : int) -> None | ValueError:
+    def pop(self, index: int) -> None | ValueError:
         if self.head is None:
             raise ValueError("Index out of bounds")
         else:
@@ -104,7 +104,7 @@ class LinkedList:
                 last.next = last.next.next
 
     # O(n) - linear time
-    def get(self, index : int) -> Any | ValueError:
+    def get(self, index: int) -> Any | ValueError:
         if self.head is None:
             raise ValueError("Index out of bounds")
         else:

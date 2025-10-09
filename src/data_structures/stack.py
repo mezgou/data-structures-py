@@ -2,15 +2,15 @@ from typing import Any
 
 
 class Node:
-    def __init__(self, value : Any) -> None:
-        self.value : Any | None = value
-        self.next : Any | None = None
+    def __init__(self, value: Any) -> None:
+        self.value: Any | None = value
+        self.next: Any | None = None
 
 
 class Stack:
     def __init__(self) -> None:
-        self.top : Node | None = None
-        self.size : int = 0
+        self.top: Node | None = None
+        self.size: int = 0
 
     # O(1) - constant time
     def __len__(self) -> int:
@@ -26,7 +26,7 @@ class Stack:
         return ", ".join(items)
     
     # O(1) - constant time
-    def push(self, value : Any) -> None:
+    def push(self, value: Any) -> None:
         new_node = Node(value)
         new_node.next = self.top
         self.top = new_node
